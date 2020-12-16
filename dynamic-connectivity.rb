@@ -11,18 +11,18 @@ class UnionFind
 
   def union p, q
     pid = @items[p]
+    puts
 
     @items.each_index do |i|
-      #puts
       #puts "i: #{i}, @items[i]: #{@items[i]}, @items[p]: #{@items[p]}, (@items[i] == @items[p]): #{(@items[i] == @items[p])}"
 
       if @items[i] == pid
         @items[i] = @items[q]
+
         puts "Connected #{p} with #{q}"
       end
     end
 
-    puts
     puts "@items: #{@items}"
   end
 end
