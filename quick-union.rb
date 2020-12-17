@@ -1,6 +1,4 @@
 class QuickUnion
-  attr :items, true
-
   def initialize n
     @items = Array.new(n) {|i| i}
   end
