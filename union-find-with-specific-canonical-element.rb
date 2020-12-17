@@ -2,6 +2,7 @@ class WeightedQuickUnion
   def initialize n
     @items = Array.new(n) {|i| i}
     @sizes = Array.new(n) {|i| 1}
+    @largest_elements = Array.new(n) {|i| i}
   end
 
   def connected? p, q
@@ -9,15 +10,7 @@ class WeightedQuickUnion
   end
 
   def find i
-    i_root = root(i)
-
-    component = []
-
-    @items.each_index do |index|
-      component << index if i_root == root(index)
-    end
-
-    component.max
+    @largest_elements[root(i)]
   end
 
   def union p, q
@@ -32,13 +25,19 @@ class WeightedQuickUnion
 
       # update the @sizes array
       @sizes[p_root] += @sizes[q_root]
+
+      # update the largest element
+      # comparing in array is slower but the code is easier to read
+      # https://stackoverflow.com/questions/2438885/elegant-ruby-syntax-to-return-the-greater-of-two-objects
+      @largest_elements[p_root] = [@largest_elements[p_root], @largest_elements[q_root]].max
     else
-      # link root of smaller tree to root of larger tree
       @items[p_root] = q_root
 
-      # update the @sizes array
       @sizes[q_root] += @sizes[p_root]
+
+      @largest_elements[q_root] = [@largest_elements[p_root], @largest_elements[q_root]].max
     end
+
 
     puts
     puts "Connected #{p} with #{q}"
