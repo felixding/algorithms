@@ -1,3 +1,4 @@
+# https://boweixu.me/posts/intro-to-union-find-data-structure-exercise/
 class WeightedQuickUnion
   def initialize n
     @items = Array.new(n) {|i| i}
