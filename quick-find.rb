@@ -1,6 +1,4 @@
-class UnionFind
-  attr :items, true
-
+class QuickFind
   def initialize n
     @items = Array.new(n) {|i| i}
   end
@@ -38,11 +36,10 @@ operations = [
   [1, 9]
 ]
 
-uf = UnionFind.new 10
+uf = QuickFind.new 10
 
 operations.each do |operation|
   p, q = operation
 
-  #puts "p: #{p}, q: #{q}"
   uf.union p, q
 end
