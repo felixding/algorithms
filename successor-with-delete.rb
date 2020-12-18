@@ -15,7 +15,7 @@ class WeightedQuickUnion
   end
 
   def remove i
-    #return if @is_removed[i] == true
+    return if @is_removed[i] == true
 
     @is_removed[i] = true
     #puts "@is_removed: #{@is_removed.inspect}"
@@ -73,13 +73,13 @@ class WeightedQuickUnion
   end
 end
 
-xs = [2, 3, 8, 9, 5, 4]
 operations = [
   [2, 2, 3],
   [3, 2, 4],
+  [3, 3, 4],
   [8, 8, 9],
   [9, 8, nil],
-  [5, 4, 6],
+  [5, 5, 6],
   [4, 3, 6]
 ]
 
