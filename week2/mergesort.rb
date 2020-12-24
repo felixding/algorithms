@@ -9,10 +9,14 @@ def merge_sort array_to_sort
   array_sorted + a + b
 end
 
-array_to_sort = (1..10).to_a.shuffle
+#array_to_sort = (1..10).to_a.shuffle
+array_to_sort = %w(dd eb ea ae ac ab bd ca).to_a.shuffle
 
 puts "Array to sort: #{array_to_sort}"
 
 m = merge_sort array_to_sort
 
 puts "Array sorted: #{m}"
+
+# summary of sorting algorithms and Ruby implementations
+# https://medium.com/@limichelle21/read-it-learn-it-build-it-sorting-algorithms-in-ruby-ead04b04baa6
