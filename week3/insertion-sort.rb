@@ -1,4 +1,6 @@
 def insertion_sort array
+  return array if array.size <= 1
+
   array.size.times do |i|
     while i > 0
       array[i - 1] > array[i] ? (array[i - 1], array[i] = array[i], array[i - 1]) : break
