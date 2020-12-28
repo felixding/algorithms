@@ -1,7 +1,5 @@
-n = 10
-
-array = [(0..(n - 1)).to_a, (n..(2 * n - 1)).to_a]
-auxiliary_array = Array.new n
+# https://www.algoqueue.com/algoqueue/default/view/983040/merging-two-sorted-arrays-with-smaller-auxiliary-array
+# https://github.com/guibin/Knowledge/blob/master/libs/lib.algorithm/src/main/java/guibin/zhang/onlinecourse/MergeWithSmallAux.java
 
 n = 3
 array = [10, 32, 55, 9, 17, 28]
