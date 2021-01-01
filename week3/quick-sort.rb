@@ -22,3 +22,33 @@ puts "Array to sort: #{array_to_sort}"
 sorted = quick_sort array_to_sort
 
 puts "Array sorted: #{sorted}"
+
+#
+# benchmark
+#
+# require 'benchmark'
+#
+# array = (1..10000000).to_a
+# #array = array.shuffle
+#
+# time = Benchmark.measure do
+#   quick_sort array
+# end
+#
+# puts time.real
+
+# 1 million
+# With shuffle
+# Time: (3.23426999989897 + 3.4910959999542683 + 3.9921659999527037) / 3 = 3.5725106666
+
+# Without shuffle
+# Time: (3.3456660001538694 + 3.7669450000394136 + 3.726056999992579) / 3 = 3.6128893334
+
+# 10 million
+# With shuffle
+# Time: (46.155843999935314 + 48.77463400014676 + 47.68713299999945) / 3 = 47.5392036667
+
+# Without shuffle
+# Time: (46.379102000035346 + 44.44086100021377 + 44.751007999992) / 3 = 45.1903236667
+
+# Conclusion: NO DIFFERENCE
