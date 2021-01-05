@@ -14,7 +14,10 @@ class NutsAndBolts
   def match lo, hi
     return if lo >= hi
 
+    puts "Partition nuts: #{@nuts}"
     pivot = partition(@nuts, lo, hi, @bolts[lo])
+
+    puts "Partition bolts: #{@bolts}"
     partition(@bolts, lo, hi, @nuts[pivot])
 
     match(lo, pivot - 1)
@@ -25,6 +28,8 @@ class NutsAndBolts
     i = lo
     j = hi
 
+    puts "Pivot: #{pivot}"
+
     while true
       i += 1 while (array[i] < pivot && i < hi)
 
@@ -32,6 +37,7 @@ class NutsAndBolts
 
       break if i >= j
 
+      puts "Swap: #{array[i]}, #{array[j]} = #{array[j]}, #{array[i]}"
       array[i], array[j] = array[j], array[i]
     end
 
@@ -44,8 +50,9 @@ class NutsAndBolts
   end
 end
 
-nuts = %w(@ # $ % ^ &)
-bolts = %w($ % & ^ @ #)
+array = (1..6).to_a
+nuts = array.shuffle
+bolts = array.shuffle
 
 nab = NutsAndBolts.new(nuts, bolts)
 nab.match(0, (nuts.size - 1))
