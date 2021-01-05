@@ -1,3 +1,6 @@
+# found another implementation:
+# https://github.com/mberlanda/algorithm-princeton/blob/master/week_3/quicksort/quicksort.rb
+
 def quick_sort array
   return array if (n = array.size) <= 1
 
